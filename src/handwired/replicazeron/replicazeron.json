@@ -1,5 +1,5 @@
 {
-  "name": "ReplicAzeron",
+  "name": "9R Replicazeron",
   "vendorId": "0x4142",
   "productId": "0x2305",
   "matrix": {
@@ -21,5 +21,68 @@
       [{"r":-15,"rx":6.75,"ry":3.25,"y":-1,"x":-0.25,"w":1.5},"5,3KC_23"]
     ]
   },
-  "menus": ["qmk_rgblight" ]
+  "menus": [
+      {
+        "label": "Lighting",
+        "content": [
+          {
+            "label": "Underglow",
+            "content": [
+              {
+                "label": "Brightness",
+                "type": "range",
+                "options": [0, 255],
+                "content": ["id_qmk_rgblight_brightness", 2, 1]
+              },
+              {
+                "label": "Effect",
+                "type": "dropdown",
+                "content": ["id_qmk_rgblight_effect", 2, 2],
+                "options": [
+                  ["00. zero", 0],
+                  ["01. STATIC_LIGHT", 1],
+                  ["02. BREATHING", 2],
+                  ["03. breathing_3", 3],
+                  ["04. breathing_4", 4],
+                  ["05. BREATHING_end", 5],
+                  ["06. RAINBOW_MOOD", 6],
+                  ["07. rainbow_mood_7", 7],
+                  ["08. RAINBOW_MOOD_end", 8],
+                  ["09. RAINBOW_SWIRL", 9],
+                  ["10. rainbow_swirl_10", 10],
+                  ["11. rainbow_swirl_11", 11],
+                  ["12. rainbow_swirl_12", 12],
+                  ["13. rainbow_swirl_13", 13],
+                  ["14. RAINBOW_SWIRL_end", 14],
+                  ["15. KNIGHT", 15],
+                  ["16. knight_22", 16],
+                  ["17. KNIGHT_end", 17],
+                  ["18. RGB_TEST", 18],
+                  ["19. TWINKLE", 19],
+                  ["20. twinkle_38", 20],
+                  ["21. twinkle_39", 21],
+                  ["22. twinkle_40", 22],
+                  ["23. twinkle_41", 23],
+                  ["24. TWINKLE_end", 24],
+                  ["25. last", 25]
+                ]
+              },
+              {
+                "showIf": "{id_qmk_rgblight_effect} != 0",
+                "label": "Effect Speed",
+                "type": "range",
+                "options": [0, 255],
+                "content": ["id_qmk_rgblight_effect_speed", 2, 3]
+              },
+              {
+                "showIf": "{id_qmk_rgblight_effect} != 0 && {id_qmk_rgblight_effect} != 35",
+                "label": "Color",
+                "type": "color",
+                "content": ["id_qmk_rgblight_color", 2, 4]
+              }
+            ]
+          }
+        ]
+      }
+    ]
 }
